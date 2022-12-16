@@ -4,7 +4,7 @@ trigger:
 - master2
 
 pool:
-  name: Hosted Ubuntu 1804
+  vmImage: 'ubuntu-18.04'
 
 steps:
 - task: UsePythonVersion@0
