@@ -26,10 +26,10 @@ phase=dbutils.widgets.get("phase")
 # Config for AzureML Workspace
 # for secure keeping, store credentials in Azure Key Vault and link using Azure Databricks secrets with dbutils
 #subscription_id = dbutils.secrets.get(scope = "common-sp", key ="az-sub-id")
-subscription_id = "3f2e4d32-8e8d-46d6-82bc-5bb8d962328b"
-resource_group = "ok-azureml-test"                   
-workspace_name = "ok-azureml-test"                       
-tenant_id = "9f37a392-f0ae-4280-9796-f1864a10effc" # Tenant ID
+subscription_id = "2fbba3e0-9452-4aca-acdc-c97c484c6b44"
+resource_group = "rg-dev"                   
+workspace_name = "aml-dev"                       
+tenant_id = "2faec555-5c8c-436c-80c9-5f78a550e924" # Tenant ID
 sp_id = dbutils.secrets.get(scope = "common-sp", key ="common-sa-sp-client-id") # Service Principal ID
 sp_secret = dbutils.secrets.get(scope = "common-sp", key ="common-sa-sp-client-secret") # Service Principal Secret
 
