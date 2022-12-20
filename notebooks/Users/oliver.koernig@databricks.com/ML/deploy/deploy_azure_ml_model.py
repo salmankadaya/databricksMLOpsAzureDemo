@@ -80,12 +80,14 @@ import mlflow.sklearn
 
 client = mlflow.tracking.MlflowClient()
 latest_model = client.get_latest_versions(name = model_name, stages=[stage])
-#print(latest_model[0])
+print(latest_model[0])
 
 # COMMAND ----------
 
 model_uri="runs:/{}/model".format(latest_model[0].run_id)
+print(model_uri)
 latest_sk_model = mlflow.sklearn.load_model(model_uri)
+print(latest_sk_model)
 
 # COMMAND ----------
 
