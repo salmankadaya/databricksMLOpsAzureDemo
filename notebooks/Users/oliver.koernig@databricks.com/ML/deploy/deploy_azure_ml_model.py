@@ -84,9 +84,9 @@ print(latest_model[0])
 
 # COMMAND ----------
 
-model_uri="runs:/{}/model".format(latest_model[0].run_id)
+model_uri="runs:/{}/random_forest_model".format(latest_model[0].run_id)
 print(model_uri)
-latest_sk_model = mlflow.sklearn.load_model(model_uri)
+latest_sk_model = mlflow.pyfunc.load_model(model_uri)
 print(latest_sk_model)
 
 # COMMAND ----------
