@@ -27,7 +27,7 @@ steps:
 
 
 - script: |
-    databricks workspace import $BUILD_SOURCESDIRECTORY/"notebooks/Users/oliver.koernig@databricks.com/ML/deploy/deploy_azure_ml_model.ipynb" "/Demo/Test/deploy_azure_ml_model"  --language PYTHON -o
+    databricks workspace import $BUILD_SOURCESDIRECTORY/"notebooks/Users/oliver.koernig@databricks.com/ML/deploy/deploy_azure_ml_model.py" "/Demo/Test/deploy_azure_ml_model"  --language PYTHON -o
   displayName: 'Import ML Deploy Notebook'
 - task: PythonScript@0
   inputs:
