@@ -227,39 +227,6 @@ loaded_model = mlflow.pyfunc.load_model(logged_model)
 import pandas as pd
 loaded_model.predict(pd.DataFrame(X_test))
 
-# COMMAND ----------
 
-# MAGIC %md
-# MAGIC Transitioning an MLflow Model’s Stage
-
-# COMMAND ----------
-
-client = mlflow.tracking.MlflowClient()
-client.transition_model_version_stage(
-    name="iris-classifier",
-    version=1,
-    stage="Staging"
-)
-
-# COMMAND ----------
-
-import mlflow.pyfunc
-
-model_name = "iris-classifier"
-stage = 'Staging'
-
-model = mlflow.pyfunc.load_model(
-    model_uri=f"models:/{model_name}/{stage}"
-)
-
-y_pred = model.predict(X_test)
-print(y_pred)
-
-# COMMAND ----------
-
-# MAGIC %r
-# MAGIC mlflow models build-docker --model-uri "runs:/b52ef8dac45243458ec1b9eacbe3204e/model" --name "my-image-name"
-
-# COMMAND ----------
 
 
