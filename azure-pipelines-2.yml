@@ -36,6 +36,9 @@ steps:
     arguments: '--shard $(DATABRICKS_HOST) --token $(DATABRICKS_TOKEN) --cluster $(EXISTING_CLUSTER_ID) --localpath $(Build.Repository.LocalPath)/notebooks/Users/oliver.koernig@databricks.com/ML/deploy --workspacepath /Demo/Test --outfilepath /home/vsts/work/1/s/notebooks/Users/oliver.koernig@databricks.com --params model_name=$(model_name)'
   displayName: 'Deploy mlFlow Model from Registry to Azure ML for Testing'
 
+- powershell: |
+    tree "$(System.DefaultWorkingDirectory)" /F
+  displayName: 'Treeview of System.DefaultWorkingDirectory'
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)/model'
