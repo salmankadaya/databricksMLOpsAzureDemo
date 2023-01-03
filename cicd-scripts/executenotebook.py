@@ -132,8 +132,8 @@ def main():
         jobjson = jobresp.text
         print("Final response:" + jobjson)
         j = json.loads(jobjson)  
-        #notebook_output= j["notebook_output"]
-        #response=notebook_output["result"]
+        notebook_output= j["metadata"]
+        response=notebook_output['state']['life_cycle_state']
         print ("Return value is:"+response)
         print('##vso[task.setvariable variable=response;]%s' % (response))
         if outfilepath != '':
