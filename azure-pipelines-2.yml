@@ -22,7 +22,7 @@ steps:
   persistCredentials: true
   clean: true
 
-- script: git fetch && git checkout main
+- script: git fetch && git checkout dev
   displayName: 'Get Latest Branch'
 
 
