@@ -136,6 +136,7 @@ def main():
         response=notebook_output["result"]
         print ("Return value is:"+response)
         print('##vso[task.setvariable variable=response;]%s' % (response))
+        print('##vso[task.setvariable variable=runid;]%s' % (runid))
         if outfilepath != '':
             file = open(outfilepath + '/' +  str(runid) + '.json', 'w')
             file.write(json.dumps(j))
