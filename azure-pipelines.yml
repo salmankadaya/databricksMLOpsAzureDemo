@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+- task: configuredatabricks@0
+  inputs:
+    url: 'https://adb-1702667794866425.5.azuredatabricks.net'
+    token: 'dapidc9b4a4e308eeab03b3f5a469bf20c95'
+- task: executenotebook@0
+  inputs:
+    notebookPath: '/Demo/Test'
+    existingClusterId: '1220-115356-lflfdat8'
+    executionParams: 'model_name=wine_quality'
